@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/mostwwwstyles.css" rel="stylesheet" media="screen">
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <style type='text/css'>
+        ul.nav li.dropdown:hover ul.dropdown-menu {
+            display: block;
+        }
+    </style>
   </head>
   <body>
 
@@ -22,7 +29,7 @@
           <div class="collapse navbar-collapse" id="bs">
               <ul class="nav navbar-nav">
                   <li><a href="index.html">Home</a></li>
-                  <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <span class="caret"></span></a>
+                  <li class="dropdown"><a href="training.html">Training <b class="caret"></b></a>
                     <ul class="dropdown-menu" role="menu">
                       <li><a href="basictraining.html">Basic Rider Course</a></li>
                       <li><a href="expTraining.html">Experienced Rider Course</a></li>
@@ -52,6 +59,7 @@
         We task our instructors to treat all of our customers as they would want a member of their family treated if they were taking the course.</p></br>
         <p>Our goal is to provide a welcome, organized, professional and friendly environment for people to obtain motorcycle safety training.
         We strive to help meet the individual needs of our students and make this training both safe and fun.</p>
+        <p>Click on any of the images below to get virtually introduced to our instructors!</p>
         <p class="text-center"><a class="btn btn-primary btn-lg" role="button">Sign-up for a Class!</a></p>
       </div>
     </div>
@@ -59,59 +67,113 @@
 
     <!-- START BODY CONTENT -->
     
-    <strong>John</strong> <p>- Founder and President of MOST from 2003 - 2013. His passion for motorcycles and motorcycle safety has driven him to make MOST the premiere motorcycle training school for 2 and 3 wheel motorcycles. His vision and attention to customer service is what drives us to "treat every student how we would want a member of our family treated."</p></br>
-    <strong>Paul</strong> <p>- Started teaching in 1996 and joined the original MOST crew in 2003.  He's also a RiderCoach Trainer and has taught over 75 training courses for MOST.  Paul is an avid gizmo guy with many techincal additions to his bike.</p></br>
-    <strong>Greg</strong> <p>- Started teaching in 2006 and he specializes in our private lessons.  He's taught over 50 training courses for MOST.  Greg has over 50,000 miles on his Honda and maintains it himself. He is also a proud new father.</p></br>
-    <strong>Al</strong> <p>- Started teaching in 2006.  He's also a 3 Wheel RiderCoach, IME Certified and has taught over 65 training courses for MOST.  Al is an avid rider and can usually be seen on one of his bikes regardless of the weather.</p></br>
-    <strong>Don</strong> <p>- Started teaching in 2004.  He's taught over 65 training courses for MOST and enjoys touring with his wife on his Anniversay Model Softtail. Don is also responsible for the production of our reflective helmet stickers.</p></br>
-    <strong>Jane</strong> <p>- Started teaching in 2010. She's also a 3 Wheel RiderCoach and has over 25 training courses for MOST.  Jane is an avid rider and whenever possible her Harley is the primary mode of tranportation from late March till December or as long as mother nature says so.</p></br>
-    <strong>Zach</strong> <p>- Completed the instructor certification course in July 2012, and has already completed teaching several courses. He's our youngest addition and one of our second generation MOST instructors.</p></br>
-    <strong>Mark</strong> <p>- Started teaching in 1990 and joined the MOST crew in 2011.  Mark brings a wealth of experience to our group.  He enjoys touring with his wife on his Road Glide.</p></br>
-    <strong>Chase</strong> <p>- Completed the instructor certificaton course in July, 2012.  He's also a graduate of the Motorcycle Mechanics Institute and has started his own repair shop.</p></br>
-    <strong>Jennifer</strong> <p>- Completed the instructor certification course in July, 2012.  She enjoys riding with her dad and tries to keep him out of trouble.  She's also a second generation MOST instructor.</p></br>
-    <strong>Wayne</strong> <p> - President of MOST. Started teaching in 2004. He's also IME Certified and has taught over 50 training courses for MOST.  Wayne enjoys an occassional track day on his Laverda and has a knack for restoring other vintage European bikes.</p>
-<!--    <div class="container">
-      <div class="row">
-        <div class="col-sm-4 col-md4">
-          <div class="thumbnail">
-            <h2><p class="text-center bg-primary">Owners Message</p></h2>
-            <div class="caption">
-              <p class="text-justify">
-                Welcome to our website! We offer a family-oriented atmosphere to meet your training needs. Our customers are treated the way we would want our family members to be treated if they were taking this training. It is our honor to have you as a guest and a customer.
+        <div id="mainwrapper">
+        
+    
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/john.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>John</h3>  
+        <p>Founder and President of MOST from 2003 - 2013. His passion for motorcycles and motorcycle safety has driven him to make MOST the premiere motorcycle training school for 2 and 3 wheel motorcycles. His vision and attention to customer service is what drives us to "treat every student how we would want a member of our family treated."</p>  
+        </span>  
+    </div> 
+        
+     
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/paul.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Paul</h3>  
+        <p>Started teaching in 1996 and joined the original MOST crew in 2003.  He's also a RiderCoach Trainer and has taught over 75 training courses for MOST.  Paul is an avid gizmo guy with many technical additions to his bike.</p>  
+        </span>  
+    </div>
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/greg.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Greg</h3>  
+        <p>Started teaching in 2006 and he specializes in our private lessons.  He's taught over 50 training courses for MOST.  Greg has over 50,000 miles on his Honda and maintains it himself. He is also a proud new father.</p>  
+        </span>  
+    </div> 
+  
 
-                <p><img src="./imgs/wayneSig.jpg" alt="Wayne Stanley"></p>
-                <p><strong>Owner</strong></p>
-              </p>
-            </div>
-          </div>
-        </div>
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/al.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Al</h3>  
+        <p>Started teaching in 2006.  He's also a 3 Wheel RiderCoach, IME Certified and has taught over 65 training courses for MOST.  Al is an avid rider and can usually be seen on one of his bikes regardless of the weather.</p>  
+        </span>  
+    </div> 
 
-        <div class="col-sm-4 col-md4">
-          <div class="thumbnail">
-            <h2><p class="text-center"><span class="label label-info">Mission Statement</span></p></h2>
-            <div class="caption">
-              <p class="text-justify">Our goal is to provide a welcome, organized, professional and friendly environment for people to obtain motorcycle safety training.  We strive to help meet the individual needs of our students and make this training both safe and fun.
-              We started this company to provide more opportunities for people to get into a motorcycle training course.  All of our instructors are very experienced riders and certified to teach by the Motorcycle Safety Foundation.  We task our instructors to treat all of our customers as they would want a member of their family treated if they were taking the course.</p>
-            </div>
-          </div>
-        </div>
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/don.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Don</h3>  
+        <p>Started teaching in 2004.  He's taught over 65 training courses for MOST and enjoys touring with his wife on his Anniversay Model Softtail. Don is also responsible for the production of our reflective helmet stickers.</p>  
+        </span>  
+    </div> 
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/jane.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Jane</h3>  
+        <p>Started teaching in 2010. She's also a 3 Wheel RiderCoach and has over 25 training courses for MOST.  Jane is an avid rider and whenever possible her Harley is the primary mode of transportation from late March till December or as long as mother nature says so.</p>  
+        </span>  
+    </div> 
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/zach.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Zach</h3>  
+        <p>Completed the instructor certification course in July 2012, and has already completed teaching several courses. He's our youngest addition and one of our second generation MOST instructors.</p>  
+        </span>  
+    </div> 
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/mark.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Mark</h3>  
+        <p>Started teaching in 1990 and joined the MOST crew in 2011.  Mark brings a wealth of experience to our group.  He enjoys touring with his wife on his Road Glide.</p>  
+        </span>  
+    </div> 
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/chase.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Chase</h3>  
+        <p>Completed the instructor certificaton course in July, 2012.  He's also a graduate of the Motorcycle Mechanics Institute and has started his own repair shop.</p>  
+        </span>  
+    </div> 
+    
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/jennifer.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Jennifer</h3>  
+        <p>Completed the instructor certification course in July, 2012.  She enjoys riding with her dad and tries to keep him out of trouble.  She's also a second generation MOST instructor.</p>  
+        </span>  
+    </div> 
+        
+    <div id="box-2" class="box">  
+        <img id="image-2" src="./imgs/wayne.jpg"/>  
+        <span class="caption full-caption">  
+        <h3>Wayne</h3>  
+        <p>President of MOST. Started teaching in 2004. He's also IME Certified and has taught over 50 training courses for MOST.  Wayne enjoys an occassional track day on his Laverda and has a knack for restoring other vintage European bikes.</p>  
+        </span>  
+    </div> 
+            
+       
+  </div>
 
-        <div class="col-sm-4 col-md4">
-          <div class="thumbnail">
-            <h2><p class="text-center"><span class="label label-success">MSF Approved!</span></p></h2>
-            <div class="caption">
-              <p class="text-justify">Our curriculum is provided by the Motorcycle Safety Foundation®. The Motorcycle Safety Foundation® is the internationally recognized developer of the comprehensive, research-based, Rider Education and Training System (MSF RETS). RETS curricula promotes lifelong-learning for motorcyclists and continuous professional development for certified RiderCoaches and other trainers. MSF also actively participates in government relations, safety research, public awareness campaigns and the provision of technical assistance to state training and licensing programs. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>-->
+    
+    <!----Fix This part --->
     <div class="jumbotron bg-primary">
       <div class="container">
         <h1><span class="glyphicon glyphicon-phone-alt"></span> 1-800-503-MOST (6678)</h1>
       </div>
     </div>
-    <div class="push"></div>
+    
+    
+<!--    <div class="push"></div>-->
     <div class="footer bg-primary">
       <div class="container">
         <div class="row">
@@ -123,17 +185,10 @@
             <br/>Manchester, NH 03108-5112
             <br/>1-800-503-MOST (6678)
           </div>
-<!--          <div class="col-md-4">
-            blah blah blah
-          </div>
-          <div class="col-md-4">
-            blah blah blah
-          </div>-->
+
         </div>
       </div>
-<!--      <div class="container">
-        aefaefaef
-      </div>-->
+
     </div>
 
     <!-- END BODY CONTENT -->
