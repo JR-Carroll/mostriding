@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 155px; /* .push must be the same height as .footer */
+}
+
+
+/* FAQ Section styling */
+
+
+
+/*Adding spaces and paddings*/
+.faq-section{
+        margin: 0px 150px 0px 150px;
+        padding: 0px 150px 0px 150px;
+        position: relative;
+}
+
+/* Hiding paragraphs */
+.faq-section p{
+        display: none;
+}       
+
+/*Hiding checkboxes */
+.faq-section input{
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        opacity: 0;
+        display: none\9;  /* IE8 and below */ 
+        margin: 0;
+        width: 100%;
+        height: 36px;
+}
+
+/* Only clipped intro visible */
+.faq-section label+p{
+        display: block;
+        color: #999;
+        font-size: .85em;
+        transition: all .15s ease-out;
+        /* Clipping text */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+}
+
+/* Show all paragraphs when check box is checked i.e. drop down is accessed*/
+.faq-section input[type=checkbox]:checked~p{
+        display: block;
+        color: #444;
+        font-size: 1em;
+        /* restore clipping defaults */
+        text-overflow: clip;
+        white-space: normal;
+        overflow: visible;
+}
+
+/* Label Styling */
+.faq-section label{
+        font-size: 1.2em;
+        background: #eee;
+        display: block;
+        position: relative;
+        height: 45px;
+        padding: 10px 10px;
+        font-weight: bold;
+        border: 1px solid #ddd;
+        border-left: 3px solid #888;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+        transition: all .15s ease-out;
+}
+
+/*Remove text selection when toggle-ing*/
+.faq-section label::selection{
+        background: none;
+}
+
+.faq-section label:hover{
+        background: #f5f5f5;
+}
+
+/* Label Styling with checkbox checked */
+.faq-section input[type=checkbox]:checked~label{
+        border-color: #ff7f50;
+        background: #f5deb4;
+        background-image: linear-gradient(to bottom, #fff, #f5deb4);
+        box-shadow: 0 0 1px rgba(0,0,0,.4);
+}
+
+/*Label's arrow - default state */
+.faq-section label::before{
+        content: '';
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        margin-top: -6px;
+        border: 6px solid transparent;
+        border-left-color: inherit;
+}
+
+/*Update the right arrow*/
+.faq-section input[type=checkbox]:checked~label::before{
+        border: 6px solid transparent;
+        border-top-color: inherit;
+        margin-top: -3px;
+        right: 10px;
+}
+
+
+/* End of FAQ Section Styling */
+
+
+/*About Section Styling*/
+
+html { background-color: #eaeaea; }  
+  
+#mainwrapper {  
+  font: 10pt normal Arial, sans-serif;  
+  height: auto;  
+  margin: 80px auto 0 auto;  
+  text-align: center;  
+  width: 660px;  
+}  
+
+#mainwrapper .box {  
+    border: 5px solid #fff;  
+    cursor: pointer;  
+    height: 235px;  
+    float: left;  
+    margin: 5px;  
+    position: relative;  
+    overflow: hidden;  
+    width: 300px;  
+    box-shadow: 1px 1px 1px 1px #ccc;  
+}  
+  
+#mainwrapper .box img {  
+    position: absolute;  
+    left: 0;  
+    transition: all 300ms ease-out;  
+}  
+
+#mainwrapper .box .caption {  
+    background-color: rgba(0,0,0,0.8);  
+    position: absolute;  
+    color: #fff;  
+    z-index: 100;  
+    transition: all 300ms ease-out;  
+    left: 0;  
+}  
+
+#mainwrapper .box .full-caption {  
+    width: 300px;  
+    height: 235px;  
+    top: -240px;  
+    text-align: left;  
+    padding: 15px;  
+}  
+
+#mainwrapper .box:hover .full-caption {  
+
+    transform: translateY(100%);  
+} 
+
+/* End of About section styling */
