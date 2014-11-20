@@ -129,8 +129,8 @@ html { background-color: #eaeaea; }
   font: 10pt normal Arial, sans-serif;  
   height: auto;  
   margin: 80px auto 0 auto;  
-  text-align: center;  
-  width: 660px;  
+  text-align: right;  
+  width: auto;  
 }  
 
 #mainwrapper .box {  
