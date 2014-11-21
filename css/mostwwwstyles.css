@@ -47,7 +47,7 @@ html, body {
 .faq-section input[type=checkbox]:checked~p{
         display: block;
         color: #444;
-        font-size: 1em;
+        font-size: 1.2em;
         /* restore clipping defaults */
         text-overflow: clip;
         white-space: normal;
@@ -80,9 +80,9 @@ html, body {
 
 /* Label Styling with checkbox checked */
 .faq-section input[type=checkbox]:checked~label{
-        border-color: #ff7f50;
-        background: #f5deb4;
-        background-image: linear-gradient(to bottom, #fff, #f5deb4);
+        border-color: #0066FF;
+        background: #99C2FF;
+        background-image: linear-gradient(to bottom, #fff, #428bca);
         box-shadow: 0 0 1px rgba(0,0,0,.4);
 }
 
