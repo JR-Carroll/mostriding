@@ -1,9 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 * {
   margin: 0;
+  font-family: "Roboto";
 }
+
 html, body {
   height: 100%;
 }
+
+
 .wrapper {
   min-height: 100%;
   height: auto !important;
@@ -166,3 +172,176 @@ html, body {
 /* Start of of Training section styling */
 
 
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default.transparent {
+    background-color: transparent;
+}
+.slide1, .slide2, .slide3, .static_slide1{
+    min-height: 560px; /* Must have a height or min-height set due to use of background images */
+    background-size: cover;
+    background-position: center center;
+}
+.slide1 {
+    background-image: url(../imgs/scenic_biles_near_mountain.jpg);
+}
+.slide2 {
+    background-image: url(../imgs/sportbike_fadded_image.jpg);
+}
+.slide3 {
+    background-image: url(../imgs/motorcycle_turning_on_road.jpg);
+}
+.static_slide1 {
+    background-image: url(../imgs/racing_white_sportbike.jpg);
+}
+
+/* Carousel Fade Effect */
+.carousel.carousel-fade .item {
+    -webkit-transition: opacity 1s linear;
+    -moz-transition: opacity 1s linear;
+    -ms-transition: opacity 1s linear;
+    -o-transition: opacity 1s linear;
+    transition: opacity 1s linear;
+    opacity: .5;
+}
+.carousel.carousel-fade .active.item {
+    opacity: 1;
+}
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+/* Carousel Overlay */
+.carousel-overlay {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+}
+
+/****************************/
+/*                          */
+/*Styles below just for Demo*/
+/*                          */
+/****************************/
+/*.navbar-default .navbar-brand {
+    color: rgba(0,180,0,1);      
+}
+.navbar-default .navbar-brand:hover {
+    color: rgba(0,180,0,1);      
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: rgba(0,180,0,.5);
+    
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 5px 0px;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #fff;
+    background-color: rgba(0,180,0,.25);
+}
+.navbar-collapse.in {
+    background-color: rgba(255,255,255,.5);
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgba(0,180,0,.5);
+}
+.navbar-toggle {
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    color: #fff;
+}*/
+.carousel-overlay {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+}
+.carousel-overlay h1 {
+    font-size: 3.5em;
+}
+.carousel-overlay .btn {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid #398439;
+    border-radius: 6px;
+}
+.carousel-overlay .btn-lg {
+    font-size: 1.75em;
+    padding: 10px 30px;
+}
+.circles {
+    margin-top: 20px;
+    background-color: #398439;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 3em;
+    width: 3em;
+    height: 3em;
+}
+.featurette-image {
+    display: block;
+    margin: auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+  color: #fff;
+  background-color: #41465A;
+} 
+
+@media (min-width: 768px) {
+    .navbar-centered .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .navbar-centered .navbar-nav > li {
+        float: none;
+    }
+    .navbar-centered .nav > li {
+        display: inline;
+    }
+    .navbar-centered .nav > li > a {
+        display: inline-block;
+    }
+}
+
+.wwwFont1 {
+    font-family: "Roboto";
+}
+
+.vertical-center {
+  min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 50vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}

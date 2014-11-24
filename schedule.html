@@ -13,10 +13,105 @@
             display: block;
         }
     </style>
+
+    <link href='./js/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='./js/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    <script src='./js/fullcalendar/lib/moment.min.js'></script>
+    <script src='./js/fullcalendar/lib/jquery.min.js'></script>
+    <script src='./js/fullcalendar/fullcalendar.min.js'></script>
+
+    <script>
+
+      $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,basicWeek,basicDay'
+          },
+          defaultDate: '2014-11-12',
+          editable: true,
+          eventLimit: true, // allow "more" link when too many events
+          events: [
+            {
+              title: 'All Day Event',
+              start: '2014-11-01'
+            },
+            {
+              title: 'Long Event',
+              start: '2014-11-07',
+              end: '2014-11-10'
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: '2014-11-09T16:00:00'
+            },
+            {
+              id: 999,
+              title: 'Repeating Event',
+              start: '2014-11-16T16:00:00'
+            },
+            {
+              title: 'Conference',
+              start: '2014-11-11',
+              end: '2014-11-13'
+            },
+            {
+              title: 'Meeting',
+              start: '2014-11-12T10:30:00',
+              end: '2014-11-12T12:30:00'
+            },
+            {
+              title: 'Lunch',
+              start: '2014-11-12T12:00:00'
+            },
+            {
+              title: 'Meeting',
+              start: '2014-11-12T14:30:00'
+            },
+            {
+              title: 'Happy Hour',
+              start: '2014-11-12T17:30:00'
+            },
+            {
+              title: 'Dinner',
+              start: '2014-11-12T20:00:00'
+            },
+            {
+              title: 'Birthday Party',
+              start: '2014-11-13T07:00:00'
+            },
+            {
+              title: 'Click for Google',
+              url: 'http://google.com/',
+              start: '2014-11-28'
+            }
+          ]
+        });
+        
+      });
+
+    </script>
+    <style>
+
+      body {
+        /*margin: 40px 10px;*/
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+      }
+
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+    </style>
   </head>
   <body>
-
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-inverse navbar-centered" role="navigation">
         <div class="container">
           <div class="navbar-header">
               <button type="test" class="navbar-toggle" data-toggle="collapse" data-target="#bs">
@@ -24,7 +119,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-<!--              <a class="navbar-brand" href="#">M.O.S.T. Rider Training</a>-->
+
           </div>
           <div class="collapse navbar-collapse" id="bs">
               <ul class="nav navbar-nav">
@@ -48,60 +143,66 @@
               </ul>
             </div>
           </div>
-        
-    </nav>
-    <!-- JUMBOTON -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Schedule</h1>
-        <p>New England's Premier Training School for 2- and 3-Wheeled Motorcycles! 1-800-503-MOST (6678)</p>
-        <p>Recognized training provider for residents of New Hampshire, Massachusetts, Vermont, and Maine.</p>
-        <p>Classes NOW forming!</p>
-        <p class="text-center"><a class="btn btn-primary btn-lg" role="button">Sign-up for a Class!</a></p>
-      </div>
-    </div>
-    <!-- END JUMBOTRON -->
-
-    <!-- START BODY CONTENT -->
-
-    
-    
-    
-    
-    
-    <div class="jumbotron bg-primary">
-      <div class="container">
-
-        <h1 class="text-center"><span class="glyphicon glyphicon-phone-alt"></span> 1-800-503-MOST (6678)</h1>
-
-      </div>
-    </div>
-
-
-    <div class="footer bg-primary">
-      <div class="container">
-        <div class="row">
-            <div class="col-md-4 text-justify"></br>
-            <strong>Contact Us</strong>
-            <br/>M.O.S.T., Inc.
-            <br/>Motorcycle Operator Safety Training, Incorporated
-            <br/>PO Box 5112
-            <br/>Manchester, NH 03108-5112
-            <br/>1-800-503-MOST (6678)
-          </div>
-
         </div>
-      </div>
-
+    </nav>
+    <!--begin bg-carousel-->
+    <div id="bg-fade-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="static_slide1"></div>
+            </div>
+        </div><!-- .carousel-inner --> 
+        <div class="container carousel-overlay text-center">
+            <h1>M.O.S.T. Training</h1>
+            <p class="lead">New England's Premier Training School for 2- and 3-Wheeled Motorcycles! 1-800-503-MOST (6678)</p>
+            <p class="lead">Recognized training provider for residents of New Hampshire, Massachusetts, Vermont, and Maine.</p>
+            <a class="btn btn-lg btn-success fp-buttons" href="#">
+                <span class="fa fa-dollar"></span> Get Pricing
+            </a>
+            <a class="btn btn-lg btn-success fp-buttons" href="#">
+                <span class="fa fa-check"></span> Take a Class
+            </a>
+            <a class="btn btn-lg btn-success fp-buttons" href="#">
+              <span class="fa fa-calendar"></span> Buy Certificate
+            </a>
+        </div>
     </div>
+
+
+    <div class="row vertical-center">
+      <div class="container">
+        <div id='calendar'></div>
+      </div>
+    </div>
+
+
+  <div class="navbar-fixed-bottom footer">
+    <div class="col-md-3 col-md-offset-2 text-center">
+      <h1><span class="glyphicon glyphicon-phone"></span></h1>
+        <h4>1-800-503-MOST (6678)</h4>
+    </div>
+
+    <div class="col-md-3 text-center">  
+      <h1><span class="glyphicon glyphicon-road"></span></h1>
+        <h4 class="wwwFont1">Motorcycle Operator Safety Training, Incorporated</h4>
+        <h4 class="wwwFont1">PO Box 5112</h4>
+        <h4 class="wwwFont1">Manchester, NH 03108-5112</h4>
+    </div>
+  
+    <div class="col-md-3 text-center">
+      <h1><span class="glyphicon glyphicon-copyright-mark"></span></h1>
+        <h4 class=" wwwFont1">Copyright, 2015</h4>
+        <h4 class=" wwwFont1">Website Created by Asad Khan & Justin Carroll</h4>
+    </div>
+  </div>
 
     <!-- END BODY CONTENT -->
     <!-- JS loaded last, speed optimization -->
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <!--<script src="http://code.jquery.com/jquery.js"></script>-->
     <script src="js/bootstrap.min.js"></script>
   </body>
 
 </html>
 
-</html>
 
