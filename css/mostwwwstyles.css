@@ -17,7 +17,7 @@ html, body {
   margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-  height: 155px; /* .push must be the same height as .footer */
+  height: 180px; /* .push must be the same height as .footer */
 }
 
 
@@ -310,7 +310,7 @@ html, body {
 
 #main {
   overflow:auto;
-  padding-bottom:150px; /* this needs to be bigger than footer height*/
+  padding-bottom:250px; /* this needs to be bigger than footer height*/
 }
 
 .footer {
