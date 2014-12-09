@@ -283,6 +283,7 @@ html, body {
 }
 .carousel-overlay h1 {
     font-size: 2em;
+    font-weight: bolder;
 }
 .carousel-overlay .btn {
     border-top: none;
@@ -396,8 +397,9 @@ html, body {
     width: 200px;
     text-align: center;
 }
+
 .phone>a {
-    color: #3A2121;
+    color: #fff;
     font-weight: bolder;
 }
 
@@ -409,8 +411,8 @@ html, body {
     height: 51px;
     color: #fff;
     padding: 7px;
-    border-top-left-radius: 1em 2em;
-    border-top-right-radius:  1em 2em;
+    border-top-left-radius: 1em 1em;
+    border-top-right-radius:  1em 1em;
     text-transform: uppercase;
 }
 
@@ -434,7 +436,7 @@ html, body {
 }
 
 
-.purple-bkgrnd:hover {
+a.purple-bkgrnd:hover {
     background-color: #504C7B;
     border-bottom: 2px solid #8E6FDD !important;
     border-right: 2px solid #8E6FDD !important;
@@ -448,7 +450,7 @@ html, body {
     border-left: 2px solid #DA70C4 !important;
 }
 
-.pink-bkgrnd:hover {
+a.pink-bkgrnd:hover {
     background-color: #891D73;
     border-bottom: 2px solid #DA70C4 !important;
     border-right: 2px solid #DA70C4 !important;
@@ -489,4 +491,8 @@ a:link a:visited a:hover a:active {
 
 .phone-footer:active {
     color: #F1DF0B !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px #000;
 }
