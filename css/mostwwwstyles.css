@@ -1,13 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Krona+One);
 
 * {
   margin: 0;
-  font-family: "Open Sans";
+  font-family: "Roboto";
+  /*font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  /*font-family: "Krona One", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 }
 
 html, body {
   height: 100%;
+  background-color: #DDD8D8;
 }
 
 
@@ -154,6 +157,10 @@ html, body {
     left: 0;
 }
 
+.caption {
+    /*text-align: justify;*/
+}
+
 #mainwrapper .box .full-caption {
     width: 300px;
     height: 235px;
@@ -175,29 +182,37 @@ html, body {
 
 .navbar {
     margin-bottom: 0px;
+    border-radius: 0;
 }
 
 .navbar-default.transparent {
     background-color: transparent;
 }
+
 .slide{
-    height: 16em;
+    min-height: 10em;
 }
 
 .slide1, .slide2, .slide3, .static_slide1{
-    min-height: 100%; /* Must have a height or min-height set due to use of background images */
+    /*min-height: 100%;*/ /* Must have a height or min-height set due to use of background images */
     background-size: cover;
     background-position: center center;
 }
+
 .slide1 {
-    background-image: url(../imgs/scenic_biles_near_mountain.jpg);
+    background-image: url(../imgs/scenic_bikes_near_mountain.jpg);
+    opacity: .7;
+    min-height: 15em;
 }
+
 .slide2 {
     background-image: url(../imgs/sportbike_fadded_image.jpg);
 }
+
 .slide3 {
     background-image: url(../imgs/motorcycle_turning_on_road.jpg);
 }
+
 .static_slide1 {
     background-image: url(../imgs/racing_white_sportbike.jpg);
 }
@@ -281,8 +296,9 @@ html, body {
     color: white;
     text-shadow: 1px 1px 1px rgba(0,0,0,.75);
 }
+
 .carousel-overlay h1 {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bolder;
 }
 .carousel-overlay .btn {
@@ -325,7 +341,7 @@ html, body {
 
 .footer {
   color: #fff;
-  background-color: #41465A;
+  background-color: #0E0E0E;
   padding: 10px 0 10px 0;
   bottom: 0;
 }
@@ -353,7 +369,6 @@ html, body {
 .vertical-center {
   min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 50vh; /* These two lines are counted as one :-)       */
-
   display: flex;
   align-items: center;
 }
@@ -371,15 +386,18 @@ html, body {
     /*font-size: 2em;*/
 }
 
-@media (max-width: 749px) {
+@media (max-width: 993px) {
     .lead {
         display: none;
     }
 }
 
 .lead {
-    font-size: 12pt;
+    font-size: 1.2em;
+    color: #DB841F;
+    font-weight: 800;
 }
+
 /*@media (min-width: 750px) {
     .lead {
         display: block;
@@ -387,20 +405,25 @@ html, body {
 }*/
 
 .phone {
-    background-color: #8C8C8C;
-    opacity: 0.5;
-    width: 20%;
-    bottom: 0;
+    background-color: #786B6B;
+    opacity: 1;
+    /*height: 100%;*/
+    /*bottom: 0;*/
     position: absolute;
     top: 0;
-    max-height: 2em;
+    /*max-height: 2em;*/
     width: 200px;
     text-align: center;
+    border-radius: 0.5em;
+    color: #fff;
+    font-size: 1em;
+    /*font-stretch: wider;*/
 }
 
 .phone>a {
-    color: #fff;
+    color: #DB841F;
     font-weight: bolder;
+    text-decoration: none;
 }
 
 .divHeader {
@@ -414,6 +437,7 @@ html, body {
     border-top-left-radius: 1em 1em;
     border-top-right-radius:  1em 1em;
     text-transform: uppercase;
+    width: 28em;
 }
 
 .thumbnail-has-header {
@@ -435,12 +459,25 @@ html, body {
     border-left: 2px solid #8E6FDD !important;
 }
 
+.orange-bkgrnd {
+    background-color: #DB841F;
+    border-bottom: 1px solid #C56A22 !important;
+    border-right: 1px solid #C56A22 !important;
+    border-left: 1px solid #F2BD2E !important;
+}
 
 a.purple-bkgrnd:hover {
     background-color: #504C7B;
     border-bottom: 2px solid #8E6FDD !important;
     border-right: 2px solid #8E6FDD !important;
     border-left: 2px solid #372265 !important;
+}
+
+a.orange-bkgrnd:hover {
+    background-color: #C2531D;
+    border-bottom: 1px solid #F2BD2E !important;
+    border-right: 1px solid #F2BD2E !important;
+    border-left: 1px solid #C56A22 !important;
 }
 
 .pink-bkgrnd {
@@ -482,17 +519,84 @@ a:link a:visited a:hover a:active {
 }
 
 .phone-footer:hover {
-    color: #F1DF0B !important;
+    color:  #DB841F !important;
+    text-decoration: none;
 }
 
 .phone-footer:visited {
-    color: #F1DF0B !important;
+    color: #DB841F !important;
 }
 
 .phone-footer:active {
-    color: #F1DF0B !important;
+    color: #DB841F !important;
 }
 
 .text-shadow {
     text-shadow: 2px 2px 4px #000;
+}
+
+.navbar-nav>li>a{
+    color: #fff !important;
+    font-size: 1.1em;
+    /*color: #aefaef;*/
+}
+
+.navbar-nav>li>a:hover{
+    color: #DB841F !important;
+    font-size: 1.1em;
+}
+
+.lightbackground {
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    border-radius: 1em;
+    /*width: 70em;*/
+}
+
+.carousel {
+    background-color: black;
+    min-height: 15em;
+}
+
+.carousel-control.right, .carousel-control.left{
+    background-image: none;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #FFDFB0;
+
+}
+
+@media (max-width: 560px) {
+    .carousl-title {
+        font-size: 1.5em;
+    }
+
+    .item-container {
+        min-height: 30em;
+    }
+}
+
+.item-body {
+    color: #fff;
+    /*background-color: green;*/
+    /*width: 70% !important;*/
+    /*text-align: center;*/
+    height: 90%;
+    top: 0;
+    padding-right: 15%;
+    padding-left: 15%;
+}
+
+.item-container {
+    background-image: url("../imgs/asphalt-bkgrnd.jpg");
+    /*background-color: red;*/
+    background-size: cover;
+    background-position: center center;
+    /*text-align: center;*/
+    padding-bottom: 3em;
+
+}
+
+.textpop {
+    color: #DB841F;
 }
