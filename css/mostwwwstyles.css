@@ -10,7 +10,7 @@
 
 html, body {
   height: 100%;
-  background-color: #DDD8D8;
+  background-color: #0E0E0E;
 }
 
 
@@ -20,6 +20,7 @@ html, body {
   height: 100%;
   margin: 0 auto -155px; /* the bottom margin is the negative value of the footer's height */
 }
+
 .footer, .push {
   min-height: 180px; /* .push must be the same height as .footer */
 }
@@ -202,7 +203,7 @@ html, body {
 .slide1 {
     background-image: url(../imgs/scenic_bikes_near_mountain.jpg);
     opacity: .7;
-    min-height: 15em;
+    min-height: 20em;
 }
 
 .slide2 {
@@ -412,11 +413,11 @@ html, body {
     position: absolute;
     top: 0;
     /*max-height: 2em;*/
-    width: 200px;
+    min-width: 230px;
     text-align: center;
     border-radius: 0.5em;
     color: #fff;
-    font-size: 1em;
+    font-size: 1.3em;
     /*font-stretch: wider;*/
 }
 
@@ -562,7 +563,7 @@ a:link a:visited a:hover a:active {
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    background-color: #FFDFB0;
+    background-color: #E37F17;
 
 }
 
@@ -572,7 +573,7 @@ a:link a:visited a:hover a:active {
     }
 
     .item-container {
-        min-height: 30em;
+        min-height: 35em;
     }
 }
 
@@ -585,6 +586,7 @@ a:link a:visited a:hover a:active {
     top: 0;
     padding-right: 15%;
     padding-left: 15%;
+    padding-top: 5em;
 }
 
 .item-container {
@@ -594,9 +596,19 @@ a:link a:visited a:hover a:active {
     background-position: center center;
     /*text-align: center;*/
     padding-bottom: 3em;
+    min-height: 40em
 
 }
 
 .textpop {
     color: #DB841F;
+}
+
+.dropdown-menu {
+    background-color: #4E4E4E;
+    color: #fff;
+}
+
+.dropdown-menu>li>a{
+    color: #fff;
 }
