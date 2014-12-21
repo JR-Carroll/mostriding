@@ -86,14 +86,14 @@ html, body {
 }
 
 .faq-section label:hover{
-        background: #f5f5f5;
+        background: #FFB445;
 }
 
 /* Label Styling with checkbox checked */
 .faq-section input[type=checkbox]:checked~label{
-        border-color: #0066FF;
-        background: #99C2FF;
-        background-image: linear-gradient(to bottom, #fff, #428bca);
+        border-color: #DB841F;
+        background: #FFB445;
+        background-image: linear-gradient(to bottom, #DB841F, #FFB445);
         box-shadow: 0 0 1px rgba(0,0,0,.4);
 }
 
@@ -379,6 +379,8 @@ html, body {
 }
 
 .jumbotron {
+
+/*    background: url(../imgs/scenic_bikes_near_mountain.jpg);*/
     padding: 14px;
     font-size: 2em;
 }
