@@ -401,6 +401,13 @@ html, body {
     font-weight: 800;
 }
 
+
+.cast {
+    font-size: 1.0em;
+    color: #FFFFFF;
+    font-weight: 500;
+    
+}
 /*@media (min-width: 750px) {
     .lead {
         display: block;
