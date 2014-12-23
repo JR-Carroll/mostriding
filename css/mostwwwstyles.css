@@ -57,7 +57,7 @@ html, body {
 /* Show all paragraphs when check box is checked i.e. drop down is accessed*/
 .faq-section input[type=checkbox]:checked~p{
         display: block;
-        color: #444;
+        color: #FFFFFF;
         font-size: 1.2em;
         /* restore clipping defaults */
         text-overflow: clip;
