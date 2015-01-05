@@ -293,8 +293,8 @@ html, body {
     margin-bottom: 8px;
     color: #fff;
 }*/
-.carousel-overlay {
-    color: white;
+.carousel-overlay, .jumboTitle {
+    color: white !important;
     text-shadow: 1px 1px 1px rgba(0,0,0,.75);
 }
 
@@ -379,14 +379,13 @@ html, body {
 }
 
 .jumbotron {
-
-/*    background: url(../imgs/scenic_bikes_near_mountain.jpg);*/
-    padding: 14px;
     font-size: 2em;
+    margin-bottom: 0;
 }
 
+
 .text-center {
-    /*font-size: 2em;*/
+    /*position: absolute;*/
 }
 
 @media (max-width: 993px) {
@@ -396,9 +395,9 @@ html, body {
 }
 
 .lead {
-    font-size: 1.2em;
     color: #DB841F;
-    font-weight: 800;
+    font-weight: 800 !important;
+    text-shadow: 1px 1px 1px #000;
 }
 
 
@@ -415,18 +414,19 @@ html, body {
 }*/
 
 .phone {
-    background-color: #786B6B;
-    opacity: 1;
+    /*background-color: #786B6B;*/
+    /*opacity: 0.5;*/
     /*height: 100%;*/
     /*bottom: 0;*/
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     /*max-height: 2em;*/
-    min-width: 230px;
-    text-align: center;
-    border-radius: 0.5em;
+    /*min-width: 230px;*/
+    /*text-align: center;*/
+    /*border-radius: 0.5em;*/
     color: #fff;
     font-size: 1.3em;
+    /*width: 15em;*/
     /*font-stretch: wider;*/
 }
 
@@ -474,6 +474,7 @@ html, body {
     border-bottom: 1px solid #C56A22 !important;
     border-right: 1px solid #C56A22 !important;
     border-left: 1px solid #F2BD2E !important;
+    color: #fff;
 }
 
 a.purple-bkgrnd:hover {
@@ -488,6 +489,7 @@ a.orange-bkgrnd:hover {
     border-bottom: 1px solid #F2BD2E !important;
     border-right: 1px solid #F2BD2E !important;
     border-left: 1px solid #C56A22 !important;
+    color: #fff;
 }
 
 .pink-bkgrnd {
@@ -620,4 +622,71 @@ a:link a:visited a:hover a:active {
 
 .dropdown-menu>li>a{
     color: #fff;
+}
+
+.toppage {
+    background: url(../imgs/guy_on_motorcycle.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+}
+
+.map {
+    padding-right: 2em;
+    color: #fff;
+    background-image: url('../imgs/greyscaleGoogleMap.jpg');
+    background-size: cover;
+    background-position: top center;
+    min-height: 30em;
+}
+
+.contactInfo {
+    color: #fff;
+}
+
+.navigationText {
+    margin: 1em 0em;
+}
+
+.navIcons {
+    font-size: 3em;
+    color: #E37F17;
+    padding-right: 1em;
+}
+
+.navaddress {
+    font-size: 2em;
+    display: inline-block;
+}
+
+.vcenter {
+    display: inline-block;   
+    vertical-align: middle;
+    float: none;
+}
+
+.adjustLeft {
+    padding-left: 12em;
+}
+
+.fadedbkgrnd {
+    background-color: #000;
+    opacity: 0.8;
+    width: 100%;
+    height: 4em;
+    /* position: absolute; */
+    max-width: 17em;
+    border: 3px solid;
+    border-color: #fff;
+    border-radius: 1em;
+    /*border-width: 2em;*/
+}
+
+.cta-container {
+    position: absolute;
+    z-index: 2;
+    padding-left: 0.6em;
+}
+
+.container-fluid {
+    background-color: #333;
 }
