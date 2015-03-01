@@ -1,0 +1,16 @@
+.login{
+	    background: none repeat scroll 0 0 #fff;     
+	    border-bottom: 2px solid #bebebe;     
+	    margin: 10% auto auto;     
+	    min-height: 350px;     
+	    width: 510px;
+}
+.login .logo {
+    background: url("/imgs/logo.jpg") no-repeat scroll center center transparent;
+    display: block;
+    height: 250px;
+    text-indent: -9999px;
+}
+#filter-course table td {
+	padding-right: 10px;
+}
