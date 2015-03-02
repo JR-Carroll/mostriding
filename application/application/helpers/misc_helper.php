@@ -110,3 +110,18 @@ if ( ! function_exists('getCoursePrice'))
     }
 }
 
+if ( ! function_exists('getLocationInfo'))
+{
+    function getLocationInfo($locationCode)
+    {
+        $locList = json_decode(LOCATIONS);
+        foreach($locList as $locInfo){
+        
+            $loc = array();
+            if($locationCode == $locInfo->code)
+                return $locInfo->location;
+          
+        }
+        return '';
+    }
+}
