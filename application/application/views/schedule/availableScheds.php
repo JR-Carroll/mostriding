@@ -54,4 +54,7 @@ table.schedule tr th{
 table.schedule tr td{
 	font-size: 12px;
 }
+table.schedule.table-striped > tbody > tr:nth-child(even) > td{
+  background-color: #e7e7e7;
+}
 </style>
