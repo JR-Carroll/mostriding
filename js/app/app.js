@@ -14,12 +14,12 @@ $(document).ready(function() {
 	   $(this).datepicker('hide');
 	   });
    });
-   
-   $("textarea").sceditor({
-		plugins: 'xhtml',
-		style: '/css/app/jquery.sceditor.default.min.css'
-	});
-
+   if($("textarea").length != 0){
+	   $("textarea").sceditor({
+			plugins: 'xhtml',
+			style: '/css/app/jquery.sceditor.default.min.css'
+		});
+   }
 });
 var MostRidingLib = {
 	filterCourse : function(){
@@ -36,9 +36,9 @@ var MostRidingLib = {
 	stopSpinner : function(){
 		  $.unblockUI(); 
 	},
-	showAvailableScheds : function(){
-		$.get('/application/index.php/schedules/displayCurrentSchedules', '', function(dataHtml){
-			console.log(dataHtml);
+	showAvailableScheds : function(domElemId, includeCss){
+		$.get('/application/index.php/schedules/displayCurrentSchedules', 'includeCss='+includeCss, function(dataHtml){
+			$(domElemId).html(dataHtml);
 		});
 	}
 }

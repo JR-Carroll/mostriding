@@ -1,11 +1,13 @@
+<?php if($includeCss == 1){?>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
+<?php }?>
 <div class="col-xs-12">
 <?php 
 foreach(getCourseCodes() as $courseInfo){
 ?>
-<h3><?php echo $courseInfo['code'].' - '.$courseInfo['name']?></h3>
+<h3 class="lead"><?php echo $courseInfo['code'].' - '.$courseInfo['name']?></h3>
 <?php if(count($course_schedules[$courseInfo['code']]) == 0){?>
-No Available Schedule
+<p style="color: #fff">No Available Schedule</p>
 <?php }else{?>
 <table class="table table-condensed table-striped table-bordered schedule">
     <thead>
@@ -30,7 +32,7 @@ No Available Schedule
         <td><?php echo $remainingSlots?></td>
         <td style="text-align: center">&nbsp;
         <?php if($remainingSlots != 0){?>
-        <a href="<?php echo SUB_CONTEXT.'/schedules/register/'.$scheds['course_schedule_id']?>" class="btn btn-info">Register</a>
+        <a href="<?php echo SUB_CONTEXT.'/schedules/register/'.$scheds['course_schedule_id']?>" class="btn btn-md fp-buttons orange-bkgrnd">Register</a>
         </td>
         <?php }?>
     </li>
@@ -45,5 +47,11 @@ No Available Schedule
 table.schedule tr th, table.schedule tr td{
 	text-align: center;
 	vertical-align: middle;
+}
+table.schedule tr th{
+	background-color: #fff;
+}
+table.schedule tr td{
+	font-size: 12px;
 }
 </style>

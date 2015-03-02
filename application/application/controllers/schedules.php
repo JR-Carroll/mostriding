@@ -45,6 +45,10 @@ class Schedules extends CI_Controller {
             $filterParams['start_date >='] = date('y-m-d');
             $data['course_schedules'][$courseInfo['code']] = $this->schedule->getAvailableSchedules($filterParams);
         }
+        $data['includeCss'] = 1;
+        if(isset($_REQUEST['includeCss']) && $_REQUEST['includeCss'] == '0'){
+        	$data['includeCss'] = 0; 
+        }
         $this->load->view('schedule/availableScheds', $data);
     }
     public function register($courseScheduleId){
