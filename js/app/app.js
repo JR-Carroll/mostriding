@@ -37,7 +37,7 @@ var MostRidingLib = {
 		  $.unblockUI(); 
 	},
 	showAvailableScheds : function(domElemId, includeCss){
-		$.get('/application/index.php/schedules/displayCurrentSchedules', 'includeCss='+includeCss, function(dataHtml){
+		$.get('/application/schedules/displayCurrentSchedules', 'includeCss='+includeCss, function(dataHtml){
 			$(domElemId).html(dataHtml);
 		});
 	}

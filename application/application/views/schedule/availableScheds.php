@@ -1,5 +1,5 @@
 <?php if($includeCss == 1){?>
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
 <?php }?>
 <div class="col-xs-12">
 <?php 
