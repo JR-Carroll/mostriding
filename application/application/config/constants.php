@@ -61,7 +61,11 @@ define('LOCATIONS', json_encode(
     array('code'=>M, 'location'=>'Elbit Systems in Merrimack, NH'),
     )
 ));
-
+/*
+ PROD
+  SecurenetId: 1076290  
+ SecureKey: WQ6HzSPS4GMl
+ */
 define('SECURENET_ID', '8003668');
 define('SECURENET_KEY', '5p0CEH5jUxpL');
 /* End of file constants.php */
