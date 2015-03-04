@@ -136,7 +136,7 @@ class Order extends CI_Controller
     	$customerBill = new ArrayObj();
     	$customerBill->ADDRESS = $input['address'];
     	$customerBill->EMAIL = $input['email'];
-    	$customerBill->EMAILRECEIPT = "false";
+    	$customerBill->EMAILRECEIPT = "TRUE";
     	$customerBill->PHONE = $input['phone'];
     	$customerBill->CITY = "";
     	$customerBill->COMPANY = "";
@@ -163,8 +163,10 @@ class Order extends CI_Controller
     	$transaction->TRANSACTION_SERVICE = 0;
     	
     	//$this->transaction = $transaction;
-    	$transaction->customerBill = $customerBill;
-    	$transaction->customerShip = $customerShip;
+    	$transaction->CUSTOMER_BILL = $customerBill;
+    	//$transaction->customerShip = $customerShip;
+    	//var_dump($transaction);
+    	//die;
     	return $transaction;
     }
     private function ProcessCardTransaction($input, $amount)
