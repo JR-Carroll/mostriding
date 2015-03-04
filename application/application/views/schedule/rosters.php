@@ -29,9 +29,11 @@
                 <table class="table table-condensed table-striped">
                     <thead>
                         <tr>
+                        	
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>                            
+                            <th>Phone</th>
+                            <th>Confirmation Code</th>                            
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -40,7 +42,8 @@
                         <tr>    
                             <td><?php echo $roster['first_name'].' '.$roster['last_name'];?></td>
                             <td><?php echo $roster['email'];?></td>
-                            <td><?php echo $roster['phone'];?></td>                                                        
+                            <td><?php echo $roster['phone'];?></td>
+                            <td>&nbsp;<?php echo isset($roster['transaction_status']) ? $roster['transaction_status'] : '';?></td>                                                        
                             <td>
                                 
                                 <a data-course_schedule_id='<?php echo $roster['course_schedule_id']?>' data-course_schedule_participant_id='<?php echo $roster['course_schedule_participant_id']?>' href="javascript: void(0);" class="glyphicon glyphicon-remove btn-delete"></a>

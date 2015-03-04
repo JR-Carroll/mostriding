@@ -20,7 +20,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>                            
+                            <th>Phone</th>
+                            <th>Confirmation Code</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +29,8 @@
                         <tr>    
                             <td><?php echo $roster['first_name'].' '.$roster['last_name'];?></td>
                             <td><?php echo $roster['email'];?></td>
-                            <td><?php echo $roster['phone'];?></td>                                                                                   
+                            <td><?php echo $roster['phone'];?></td>
+                            <td>&nbsp;<?php echo isset($roster['transaction_status']) ? $roster['transaction_status'] : '';?></td>                                                                                   
                         </tr>
                         <?php }?>
                     </tbody>

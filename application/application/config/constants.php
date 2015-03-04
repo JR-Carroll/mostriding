@@ -61,5 +61,8 @@ define('LOCATIONS', json_encode(
     array('code'=>M, 'location'=>'Elbit Systems in Merrimack, NH'),
     )
 ));
+
+define('SECURENET_ID', '8003668');
+define('SECURENET_KEY', '5p0CEH5jUxpL');
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

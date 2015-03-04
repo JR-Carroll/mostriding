@@ -52,8 +52,9 @@ class Schedules extends CI_Controller {
         $this->load->view('schedule/availableScheds', $data);
     }
     public function register($courseScheduleId){
-        $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);
-        $this->load->view('schedule/register', $data);
+        $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);        
+        $data['content'] = $this->load->view('schedule/register', $data, true);
+        $this->load->view('layouts/main', $data);
     }
     /*
      * Brings the user to the add new email template page
@@ -158,9 +159,9 @@ class Schedules extends CI_Controller {
         if (isAuthenticated()) {
             $input = $this->input->post();
             $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
-            $this->form_validation->set_rules('last_name', 'Course', 'trim|required');
-            $this->form_validation->set_rules('email', 'Location', 'trim|required|valid_email');
-            $this->form_validation->set_rules('phone', 'Trainer Name', 'trim|required');
+            $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
              
             //template has errors
             if ($this->form_validation->run() == FALSE) {
