@@ -110,6 +110,22 @@ if ( ! function_exists('getCoursePrice'))
     }
 }
 
+if ( ! function_exists('getCourseName'))
+{
+    function getCourseName($courseCode)
+    {
+        $courseList = json_decode(COURSES);
+        foreach($courseList as $courseInfo){
+
+            $course = array();
+            if($courseInfo->code == $courseCode)
+                return $courseInfo->name;
+
+        }
+        return '';
+    }
+}
+
 if ( ! function_exists('getLocationInfo'))
 {
     function getLocationInfo($locationCode)

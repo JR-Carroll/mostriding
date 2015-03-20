@@ -42,7 +42,8 @@ class Order extends CI_Controller
         }
         
             $input = $this->input->post();
-            $courseScheduleId = $input['course_schedule_id'];
+            $isGC = $input['isGC'];
+            
             $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
             $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
             $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
@@ -54,8 +55,23 @@ class Order extends CI_Controller
             $this->form_validation->set_rules('cvc', 'CVC', 'trim|required');
           	$isSuccess = false;   
           	$confirmationNumber = '';
+          	$courseCode = '';
+          	if($isGC == 0){
+          	    $courseScheduleId = $input['course_schedule_id'];
+          	    $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);
+          	    $courseCode = $data['courseSchedule']['course_code'];
+          	    
+          	    $data['isGC'] = false;
+          	    $data['courseCode'] = '';
+          	    
+          	}else{
+          	    $courseCode = $input['course_code'];
+          	    $data['courseSchedule'] = false;
+          	    $data['isGC'] = true;
+          	    $data['courseCode'] = $courseCode;
+          	}
           	
-          	$data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);
+          	
             //template has errors
             if ($this->form_validation->run() == FALSE) {
                 $data['error'] = validation_errors();
@@ -67,7 +83,7 @@ class Order extends CI_Controller
                  
                 $participant = array();
                 $participant = $input;
-                $participant['course_schedule_id'] = $courseScheduleId;
+                
                 
                 $confirmationNumber='';
                 
@@ -78,13 +94,22 @@ class Order extends CI_Controller
                 unset($participant['cardNumber']);
                 
                 //var_dump($res);
-                $responseModel = $this->ProcessCardTransaction($input, number_format(getCoursePrice($data['courseSchedule']['course_code'])));
+                $responseModel = $this->ProcessCardTransaction($input, number_format(getCoursePrice($courseCode)));
                 //var_dump($responseModel->response->TRANSACTIONRESPONSE->RESPONSE_CODE);
                 if($responseModel !== false && $responseModel->response->TRANSACTIONRESPONSE->RESPONSE_CODE == '1'){
                 	$isSuccess = true;
                 	$confirmationNumber = $responseModel->response->TRANSACTIONRESPONSE->TRANSACTIONID;
                 	$participant['transaction_status'] = $confirmationNumber;//confirmation code;;
-                	$res = $this->schedule->addCourseParticipant($participant);
+                	unset($participant['isGC']);
+                	                	
+                	if($isGC == 0){
+                	   unset($participant['course_code']);
+                	   $participant['course_schedule_id'] = $courseScheduleId;
+                	   $res = $this->schedule->addCourseParticipant($participant);
+                	}else{
+                	   unset($participant['course_schedule_id']);
+                	   $res = $this->schedule->addCourseGiftCertificatePurchases($participant); 
+                	}
                 	//print_r('success');
                 }else if($responseModel === false){
                 	$data['error'] = "Credit Card Error, please try again";

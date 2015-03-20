@@ -114,7 +114,19 @@ class Schedule extends CI_Model {
         }
          
     }
+    public function addCourseGiftCertificatePurchases($details) {
+        try {
+            $details['updated_at'] = date("Y-m-d H:i:s");
+            $res = $this->db->insert('course_gift_certificates', $details);
+            $details['course_gift_certificates_id'] = $res;
+            $res = $details;
     
+            return $res;
+        } catch (Exception $exc) {
+            throw new Exception($exc->getMessage());
+        }
+         
+    }
     
     public function getCourseSchedule($courseScheduleId){
         try{

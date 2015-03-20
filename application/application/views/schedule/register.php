@@ -1,9 +1,9 @@
 <?php 
-if($courseSchedule === false){
+if($isGC === false && $courseSchedule === false){
 ?>
 <div class="alert alert-danger">Course not available</div>
 <?php 
-}else if(getRemainingSlots($courseSchedule['course_schedule_id']) == 0 ){
+}else if($isGC === false && $courseSchedule !== false && getRemainingSlots($courseSchedule['course_schedule_id']) == 0 ){
 ?>
 <div class="alert alert-danger">No More Slots Available</div>
 <?php     
@@ -17,9 +17,11 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
  -->
 <div class="container-fliud"> 
     <section class="content-wraper">
-    
+    <?php if($courseSchedule !== false){?>
 	<h2>Register: (<?php echo $courseSchedule['name']?> - <?php echo '$'.number_format(getCoursePrice($courseSchedule['course_code']), 2)?>)</h2>
-	
+	<?php }else{?>
+	<h2>Buy Gift Certificate: (<?php echo getCourseName($courseCode)?> - <?php echo '$'.number_format(getCoursePrice($courseCode), 2)?>)</h2>
+	<?php }?>
     <div class="form">        
         <?php if (isset($error)): ?>
             <div class="alert alert-danger"><?php echo $error; ?></div>
@@ -33,12 +35,16 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 			id="courseScheduleForm" name="courseScheduleForm" method="post"
 			action="<?php echo SUB_CONTEXT.'/order/payment'?>">
 			<input type="hidden" name="course_schedule_id" value="<?php echo $courseSchedule['course_schedule_id']?>"/>
+			<input type="hidden" name="course_code" value="<?php echo $courseCode?>"/>
+			<input type="hidden" name="isGC" value="<?php echo $isGC ? '1' : '0'?>"/>
+			<?php if($courseSchedule !== false){?>
 			<div class="form-group">
 				<label for="schedule" class="col-lg-3 control-label">Schedule *</label>
 				<div class="col-lg-6">
 					<label  class="control-label"><?php echo date('M d, Y', strtotime($courseSchedule['start_date'])) . ' to ' .date('M d, Y', strtotime($courseSchedule['end_date']))?></label>
 				</div>
 			</div>
+			<?php }?>
 			
 			<div class="form-group">
 				<label for="first_name" class="col-lg-3 control-label">First Name *</label>
@@ -133,7 +139,7 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 
 			<div class="form-group">
 				<label class="col-lg-5 control-label submitForm pull-right">
-					<button class="btn btn-info" name="save">Register</button> <span
+					<button class="btn btn-info" name="save"><?php echo $isGC ? 'Buy' : 'Register'?></button> <span
 					class="or">OR</span> <a href="/schedule.html" class="cancel">Cancel</a>
 				</label>
 			</div>

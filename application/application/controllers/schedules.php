@@ -52,7 +52,16 @@ class Schedules extends CI_Controller {
         $this->load->view('schedule/availableScheds', $data);
     }
     public function register($courseScheduleId){
+        $data['isGC'] = false;
+        $data['courseCode'] = '';
         $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);        
+        $data['content'] = $this->load->view('schedule/register', $data, true);
+        $this->load->view('layouts/main', $data);
+    }
+    public function buyCertificate($courseCode){
+        $data['courseSchedule'] = false;
+        $data['isGC'] = true;
+        $data['courseCode'] = $courseCode;
         $data['content'] = $this->load->view('schedule/register', $data, true);
         $this->load->view('layouts/main', $data);
     }
