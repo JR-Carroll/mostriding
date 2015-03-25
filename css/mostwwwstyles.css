@@ -578,16 +578,6 @@ a:link a:visited a:hover a:active {
 
 }
 
-@media (max-width: 560px) {
-    .carousl-title {
-        font-size: 1.5em;
-    }
-
-    .item-container {
-        min-height: 35em;
-    }
-}
-
 .item-body {
     color: #fff;
     /*background-color: green;*/
@@ -607,7 +597,7 @@ a:link a:visited a:hover a:active {
     background-position: center center;
     /*text-align: center;*/
     padding-bottom: 3em;
-    min-height: 40em
+    min-height: 28em;
 
 }
 
@@ -641,6 +631,7 @@ a:link a:visited a:hover a:active {
 
 .contactInfo {
     color: #fff;
+    padding-left: 1.5em;
 }
 
 .navigationText {
@@ -665,7 +656,8 @@ a:link a:visited a:hover a:active {
 }
 
 .adjustLeft {
-    padding-left: 12em;
+    padding-left: 29%;
+    padding-right: 21%;
 }
 
 .fadedbkgrnd {
@@ -684,9 +676,52 @@ a:link a:visited a:hover a:active {
 .cta-container {
     position: absolute;
     z-index: 2;
-    padding-left: 0.6em;
+    padding-left: 0.8em;
 }
 
 .container-fluid {
     background-color: #333;
+}
+
+@media screen and (max-width: 560px) {
+    .carousl-title {
+        font-size: 1.5em;
+    }
+
+    .item-container {
+        min-height: 35em;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .lead {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .adjustLeft {
+        padding-left: 25%;
+    }
+}
+
+@media screen and (max-width: 1099px) {
+    .adjustLeft  {
+        padding-left: 25%;
+        padding-left: 20%;
+    }
+
+    .phone {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .cta-container {
+        padding-left: 0;
+    }
+
+    .btn-lg {
+        padding: 4px;
+        font-size: 14px;
+    }
 }
