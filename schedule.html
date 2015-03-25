@@ -5,91 +5,23 @@
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/mostwwwstyles.css" rel="stylesheet" media="screen">
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <link href="css/mostwwwstyles.css" rel="stylesheet" media="screen">    
+    <script src="/js/app/jquery-1.11.2.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/app/jquery.dataTables.js"></script>
+	<script src="/js/app/jquery.blockUI.js"></script>
     <style type='text/css'>
         ul.nav li.dropdown:hover ul.dropdown-menu {
             display: block;
         }
     </style>
 
-    <link href='./js/fullcalendar/fullcalendar.css' rel='stylesheet' />
-    <link href='./js/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-    <script src='./js/fullcalendar/lib/moment.min.js'></script>
-    <script src='./js/fullcalendar/lib/jquery.min.js'></script>
-    <script src='./js/fullcalendar/fullcalendar.min.js'></script>
-
+	<script src="/js/app/app.js"></script>
     <script>
 
       $(document).ready(function() {
         
-        $('#calendar').fullCalendar({
-          header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,basicWeek,basicDay'
-          },
-          defaultDate: '2014-11-12',
-          editable: true,
-          eventLimit: true, // allow "more" link when too many events
-          events: [
-            {
-              title: 'All Day Event',
-              start: '2014-11-01'
-            },
-            {
-              title: 'Long Event',
-              start: '2014-11-07',
-              end: '2014-11-10'
-            },
-            {
-              id: 999,
-              title: 'Repeating Event',
-              start: '2014-11-09T16:00:00'
-            },
-            {
-              id: 999,
-              title: 'Repeating Event',
-              start: '2014-11-16T16:00:00'
-            },
-            {
-              title: 'Conference',
-              start: '2014-11-11',
-              end: '2014-11-13'
-            },
-            {
-              title: 'Meeting',
-              start: '2014-11-12T10:30:00',
-              end: '2014-11-12T12:30:00'
-            },
-            {
-              title: 'Lunch',
-              start: '2014-11-12T12:00:00'
-            },
-            {
-              title: 'Meeting',
-              start: '2014-11-12T14:30:00'
-            },
-            {
-              title: 'Happy Hour',
-              start: '2014-11-12T17:30:00'
-            },
-            {
-              title: 'Dinner',
-              start: '2014-11-12T20:00:00'
-            },
-            {
-              title: 'Birthday Party',
-              start: '2014-11-13T07:00:00'
-            },
-            {
-              title: 'Click for Google',
-              url: 'http://google.com/',
-              start: '2014-11-28'
-            }
-          ]
-        });
+    	  MostRidingLib.showAvailableScheds('#avail-schedule', 0);
         
       });
 
@@ -161,7 +93,7 @@
             <p class="lead">Recognized training provider for residents of New Hampshire, Massachusetts, Vermont, and Maine.</p>
           <p class="text-center"><a class="btn btn-lg btn-success fp-buttons orange-bkgrnd" href="#">Get Pricing</a>
              <a class="btn btn-lg btn-success fp-buttons orange-bkgrnd" href="#">Take a class</a>
-             <a class="btn btn-lg btn-success fp-buttons orange-bkgrnd" href="#">Buy Certificate</a>
+             <a class="btn btn-lg btn-success fp-buttons orange-bkgrnd" href="/giftCerts.html">Buy Certificate</a>
           </p>
         </div>
     </div>
@@ -169,7 +101,7 @@
 
     <div class="row vertical-center">
       <div class="container">
-        <div id='calendar'></div>
+        <div id='avail-schedule'></div>
       </div>
     </div>
 
