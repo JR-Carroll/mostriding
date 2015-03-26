@@ -84,8 +84,9 @@ class Schedule extends CI_Model {
             if ($details['course_schedule_id'] == '') {
                 unset($details['course_schedule_id']);
                 $res = $this->db->insert('course_schedule', $details);
-                $details['course_schedule_id'] = $res;
-                $res = $details;
+                //$details['course_schedule_id'] = $this->db->insert_id();
+                $res = $this->getCourseScheduleByName($details['name']);
+                //$res = $details;
             }else{
                
                 $status = $this->db

@@ -34,7 +34,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="course_code" class="col-lg-3 control-label">Course*</label>
+				<label for="course_code" class="col-lg-3 control-label">Course</label>
 				<div class="col-lg-6">					
 					<select class="form-control" name="course_code">
 					   <option value="">Please Choose</option>
@@ -46,7 +46,7 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="location_code" class="col-lg-3 control-label">Location*</label>
+				<label for="location_code" class="col-lg-3 control-label">Location</label>
 				<div class="col-lg-6">					
 					<select class="form-control" name="location_code">
 					   <option value="">Please Choose</option>
@@ -58,7 +58,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="trainer_name" class="col-lg-3 control-label">Trainer name*</label>
+				<label for="trainer_name" class="col-lg-3 control-label">Trainer name</label>
 				<div class="col-lg-6">
 					<input type="text" class="form-control" id="trainer_name"
 						name="trainer_name"
@@ -67,7 +67,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="available_slots" class="col-lg-3 control-label">Available Slots*</label>
+				<label for="available_slots" class="col-lg-3 control-label">Available Slots</label>
 				<div class="col-lg-6">
 					<input type="text" class="form-control" id="available_slots"
 						name="available_slots"

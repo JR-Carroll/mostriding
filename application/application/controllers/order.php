@@ -46,9 +46,12 @@ class Order extends CI_Controller
             
             $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
             $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            //$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
-            $this->form_validation->set_rules('address', 'Address', 'trim|required');
+            $this->form_validation->set_rules('street_address', 'Address', 'trim|required');
+            $this->form_validation->set_rules('city', 'City', 'trim|required');
+            $this->form_validation->set_rules('state', 'State', 'trim|required');
+            $this->form_validation->set_rules('zip', 'Zip', 'trim|required');
             $this->form_validation->set_rules('cardNumber', 'Card Number', 'trim|required');
             $this->form_validation->set_rules('exp_month', 'Card Expiry Month', 'trim|required');
             $this->form_validation->set_rules('exp_year', 'Card Expiry Year', 'trim|required');

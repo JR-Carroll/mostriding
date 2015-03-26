@@ -174,7 +174,7 @@ class Schedules extends CI_Controller {
             $input = $this->input->post();
             $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
             $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
-            $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+            //$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
             $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
              
             //template has errors
@@ -209,6 +209,7 @@ class Schedules extends CI_Controller {
         }
         if (isAuthenticated()) {
             $input = $this->input->post();
+            /*
             $this->form_validation->set_rules('name', 'Name', 'trim|required');
             $this->form_validation->set_rules('course_code', 'Course', 'trim|required');
             $this->form_validation->set_rules('location_code', 'Location', 'trim|required');
@@ -217,13 +218,16 @@ class Schedules extends CI_Controller {
             $this->form_validation->set_rules('time_content', 'Time Content', 'trim|required');
             $this->form_validation->set_rules('start_date', 'Start Date', 'trim|required');
             $this->form_validation->set_rules('end_date', 'End Date', 'trim|required');
-                       
+            */           
             $courseSchedule = $this->schedule->getCourseScheduleByName($input['name']);
             //template has errors
+            /*
             if ($this->form_validation->run() == FALSE) {
                 $data['error'] = validation_errors();
                 $data['courseSchedule'] = $input;
-            } else if(($input['course_schedule_id'] == '' &&  $courseSchedule !== false) || ($input['course_schedule_id'] != '' && $courseSchedule !== false && $courseSchedule['course_schedule_id'] != $input['course_schedule_id'] )) {
+            } else 
+            */    
+            if(($input['course_schedule_id'] == '' &&  $courseSchedule !== false) || ($input['course_schedule_id'] != '' && $courseSchedule !== false && $courseSchedule['course_schedule_id'] != $input['course_schedule_id'] )) {
             	//template name is not unique
             	$data['error'] = 'Course Name not unique, please try again';
             	$data['courseSchedule'] = $input;
@@ -235,6 +239,7 @@ class Schedules extends CI_Controller {
                	$courseSchedule = $input;
                	unset($courseSchedule['save']);
                	$res = $this->schedule->saveCourseSchedule($courseSchedule);
+               	//var_dump($res);
                
                 $data['courseSchedule'] = $res;
             }
