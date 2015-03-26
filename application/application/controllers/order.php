@@ -162,17 +162,17 @@ class Order extends CI_Controller
     	$transaction->VERSION = "v1.0"; // your app version
     
     	$customerBill = new ArrayObj();
-    	$customerBill->ADDRESS = $input['address'];
+    	$customerBill->ADDRESS = $input['street_address'];
     	$customerBill->EMAIL = $input['email'];
     	$customerBill->EMAILRECEIPT = "TRUE";
     	$customerBill->PHONE = $input['phone'];
-    	$customerBill->CITY = "";
+    	$customerBill->CITY = '';//$input['city'];
     	$customerBill->COMPANY = "";
     	$customerBill->COUNTRY = "USA";
     	$customerBill->FIRSTNAME = $input['first_name'];
     	$customerBill->LASTNAME = $input['last_name'];
-    	$customerBill->STATE = "";
-    	$customerBill->ZIP = "";
+    	$customerBill->STATE = '';//$input['state'];
+    	$customerBill->ZIP = '';//$input['zip'];
     
     	$customerShip = new ArrayObj();
     	$customerShip->CITY = "";
