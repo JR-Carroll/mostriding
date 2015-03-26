@@ -16,6 +16,10 @@ Course Id: <?php echo $courseSchedule['course_schedule_id']?>
 Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_code']))?>
  -->
 <div class="container-fliud"> 
+  <div class="row" style="text-align: center">
+    <br />
+  <img style="text-align: center" border="0" src="http://bit.ly/ISUR8X">
+  </div>
     <section class="content-wraper">
     <?php if($courseSchedule !== false){?>
 	<h2>Register: (<?php echo $courseSchedule['name']?> - <?php echo '$'.number_format(getCoursePrice($courseSchedule['course_code']), 2)?>)</h2>
