@@ -381,6 +381,7 @@ html, body {
 .jumbotron {
     font-size: 2em;
     margin-bottom: 0;
+    height: 80%;
 }
 
 
@@ -658,6 +659,8 @@ a:link a:visited a:hover a:active {
 .adjustLeft {
     padding-left: 29%;
     padding-right: 21%;
+    background: url('../imgs/transparent_background.png') no-repeat center;
+    opacity: .8;
 }
 
 .fadedbkgrnd {
@@ -673,6 +676,17 @@ a:link a:visited a:hover a:active {
     /*border-width: 2em;*/
 }
 
+.header {
+    color: #00000;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.contactForm  {
+    font-size: 38px;
+    color: #00000;
+}
+
 .cta-container {
     position: absolute;
     z-index: 2;
@@ -683,7 +697,7 @@ a:link a:visited a:hover a:active {
     background-color: #333;
 }
 
-@media screen and (max-width: 560px) {
+/*@media screen and (max-width: 560px) {
     .carousl-title {
         font-size: 1.5em;
     }
@@ -696,6 +710,10 @@ a:link a:visited a:hover a:active {
 @media screen and (max-width: 1025px) {
     .lead {
         display: none;
+    }
+    
+    .fadedbkgrnd {
+        margin-left: 1em;
     }
 }
 
@@ -724,4 +742,4 @@ a:link a:visited a:hover a:active {
         padding: 4px;
         font-size: 14px;
     }
-}
+}*/
