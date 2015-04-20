@@ -149,17 +149,17 @@ html, body {
     transition: all 300ms ease-out;
 }
 
-#mainwrapper .box .caption {
+/*#mainwrapper .box .caption {
     background-color: rgba(0,0,0,0.8);
     position: absolute;
     color: #fff;
     z-index: 100;
     transition: all 300ms ease-out;
     left: 0;
-}
+}*/
 
 .caption {
-    /*text-align: justify;*/
+    text-align: justify;
 }
 
 #mainwrapper .box .full-caption {
@@ -313,6 +313,11 @@ html, body {
     font-size: 0.85em;
     padding: 10px 20px;
 }
+
+.purple {
+    color: #F1C3FF !important;
+}
+
 .circles {
     margin-top: 20px;
     background-color: #398439;
@@ -371,7 +376,7 @@ html, body {
   min-height: 50%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 50vh; /* These two lines are counted as one :-)       */
   display: flex;
-  align-items: center;
+  align-items: center
 }
 
 .carousel-inner {
@@ -381,9 +386,12 @@ html, body {
 .jumbotron {
     font-size: 2em;
     margin-bottom: 0;
-    height: 80%;
+    height: 80%;    
 }
 
+.jumbopad {
+    padding-top: 10%;
+}
 
 .text-center {
     /*position: absolute;*/
@@ -450,6 +458,7 @@ html, body {
     text-transform: uppercase;
     width: 28em;
 }
+
 
 .thumbnail-has-header {
     padding-top: 0;
@@ -598,7 +607,7 @@ a:link a:visited a:hover a:active {
     background-position: center center;
     /*text-align: center;*/
     padding-bottom: 3em;
-    min-height: 28em;
+    min-height: 31em;
 
 }
 
@@ -619,6 +628,71 @@ a:link a:visited a:hover a:active {
     background: url(../imgs/guy_on_motorcycle.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
+    height: 100%;
+}
+
+.standard-jumbotron {
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.aboutpage {
+    background: url(../imgs/2215746619_2ee4fe635f_o.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.giftcerts-page {
+    background: url(../imgs/16273464919_eb98722dfa_k.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.trainingpage {
+    background: url(../imgs/12458369475_13eda62d51_o.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.schedulepage {
+    background: url(../imgs/2216540928_9e6b81b8ae_o.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.contactpage {
+    background: url(../imgs/14172076541_e142d24677_k.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.faqpage {
+    background: url(../imgs/2216540202_9c0d882050_o.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.linkspage {
+    background: url(../imgs/14082449743_ea19cd6430_k.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0.75;
+    height: 100%;
+}
+
+.top-header {
+    width:100%;
+    background-color: #222;
+}
+
+.middlemap {
+    height: 30em;
 }
 
 .map {
@@ -633,10 +707,12 @@ a:link a:visited a:hover a:active {
 .contactInfo {
     color: #fff;
     padding-left: 1.5em;
+    height: 100%;
 }
 
 .navigationText {
     margin: 1em 0em;
+    height: 33%;
 }
 
 .navIcons {
