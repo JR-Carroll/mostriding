@@ -50,6 +50,7 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 			</div>
 			<?php }?>
 			
+			<h2><center>Billing Information</center></h2>
 			<div class="form-group">
 				<label for="first_name" class="col-lg-3 control-label">First Name *</label>
 				<div class="col-lg-6">
@@ -223,13 +224,120 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 				</div>
 			</div>
 			
+			<center><h2>Optional/Additional Information</h2></center>
+			<div class="form-group">
+				<label for="student_name" class="col-lg-3 control-label">Student Name</label>
+				<div class="col-lg-6">
+					<input type="text" class="form-control" id="student_name"
+						name="student_name"
+						value="<?php if (isset($input['student_name'])) echo $input['student_name'];?>" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="student_address" class="col-lg-3 control-label">Student Street Address</label>
+				<div class="col-lg-6">
+				<input type="text" class="form-control" id="student_street_address"
+					name="student_street_address"
+					value="<?php if (isset($input['student_street_address'])) echo $input['student_street_address'];?>" />
+			</div>
+			</div>
+			<div class="form-group">
+			    <label for="student_address" class="col-lg-3 control-label">Student City</label> 
+			    
+				
+				<div class="col-lg-6">
+				    <div class="col-xs-4" style="padding-left: 0px">
+					<input type="text" class="form-control" id="student_city"
+						name="student_city"
+						value="<?php if (isset($input['student_city'])) echo $input['student_city'];?>" />
+					</div>
+					<div class="col-xs-4">
+    				<label for="student_address" class="col-lg-3 control-label">Student State</label>
+    				<div class="col-lg-9">    				
+    					<select class="form-control" id="student_state"
+    						name="student_state">
+                        	<option value="AL">Alabama</option>
+                        	<option value="AK">Alaska</option>
+                        	<option value="AZ">Arizona</option>
+                        	<option value="AR">Arkansas</option>
+                        	<option value="CA">California</option>
+                        	<option value="CO">Colorado</option>
+                        	<option value="CT">Connecticut</option>
+                        	<option value="DE">Delaware</option>
+                        	<option value="DC">District Of Columbia</option>
+                        	<option value="FL">Florida</option>
+                        	<option value="GA">Georgia</option>
+                        	<option value="HI">Hawaii</option>
+                        	<option value="ID">Idaho</option>
+                        	<option value="IL">Illinois</option>
+                        	<option value="IN">Indiana</option>
+                        	<option value="IA">Iowa</option>
+                        	<option value="KS">Kansas</option>
+                        	<option value="KY">Kentucky</option>
+                        	<option value="LA">Louisiana</option>
+                        	<option value="ME">Maine</option>
+                        	<option value="MD">Maryland</option>
+                        	<option value="MA">Massachusetts</option>
+                        	<option value="MI">Michigan</option>
+                        	<option value="MN">Minnesota</option>
+                        	<option value="MS">Mississippi</option>
+                        	<option value="MO">Missouri</option>
+                        	<option value="MT">Montana</option>
+                        	<option value="NE">Nebraska</option>
+                        	<option value="NV">Nevada</option>
+                        	<option value="NH">New Hampshire</option>
+                        	<option value="NJ">New Jersey</option>
+                        	<option value="NM">New Mexico</option>
+                        	<option value="NY">New York</option>
+                        	<option value="NC">North Carolina</option>
+                        	<option value="ND">North Dakota</option>
+                        	<option value="OH">Ohio</option>
+                        	<option value="OK">Oklahoma</option>
+                        	<option value="OR">Oregon</option>
+                        	<option value="PA">Pennsylvania</option>
+                        	<option value="RI">Rhode Island</option>
+                        	<option value="SC">South Carolina</option>
+                        	<option value="SD">South Dakota</option>
+                        	<option value="TN">Tennessee</option>
+                        	<option value="TX">Texas</option>
+                        	<option value="UT">Utah</option>
+                        	<option value="VT">Vermont</option>
+                        	<option value="VA">Virginia</option>
+                        	<option value="WA">Washington</option>
+                        	<option value="WV">West Virginia</option>
+                        	<option value="WI">Wisconsin</option>
+                        	<option value="WY">Wyoming</option>
+                        </select>	
+    				</div>
+    				</div>
+    				<div class="col-xs-4">
+    				<label for="student_address" class="col-lg-3 control-label">Student Zip</label>
+    				<div class="col-lg-9">
+    					<input type="text" class="form-control" id="student_zip"
+    						name="student_zip"
+    						value="<?php if (isset($input['student_zip'])) echo $input['student_zip'];?>" />
+    				</div>
+    				</div>
+    					
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="student_phone" class="col-lg-3 control-label">Student Phone</label>
+				<div class="col-lg-2">
+					<input type="text" class="form-control" id="student_phone"
+						name="student_phone"
+						value="<?php if (isset($input['student_phone'])) echo $input['student_phone'];?>" />
+				</div>
+			</div>
+
 
 			<div class="form-group">
-				<label class="col-lg-5 control-label submitForm pull-right">
+				<label class="col-lg-6 control-label submitForm">
 					<button class="btn btn-info" name="save"><?php echo $isGC ? 'Buy' : 'Register'?></button> <span
-					class="or">OR</span> <a href="/schedule.html" class="cancel">Cancel</a>
+					class="or">OR</span> <button class="btn btn-danger" name="cancel"><a style="color:#fff;" href="/schedule.html" class="cancel">Cancel</a></button>
 				</label>
 			</div>
+
 		</form>
 	</div>
 </section>
