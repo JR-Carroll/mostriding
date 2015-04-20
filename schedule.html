@@ -5,9 +5,12 @@
     <!-- Bootstrap -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/mostwwwstyles.css" rel="stylesheet" media="screen">
+        <link href="css/mostwwwstyles.css" rel="stylesheet" media="screen">
     <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+	
+    
     <style type='text/css'>
         ul.nav li.dropdown:hover ul.dropdown-menu {
             display: block;
@@ -15,6 +18,33 @@
     </style>
 
   </head>
+  
+      <script src="/js/app/app.js"></script>
+    <script>
+
+      $(document).ready(function() {
+        
+          MostRidingLib.showAvailableScheds('#avail-schedule', 0);
+        
+      });
+
+    </script>
+    <style>
+
+      body {
+        /*margin: 40px 10px;*/
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+      }
+
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+    </style>
+  
   <body>
     <nav class="navbar navbar-centered navbar-inverse" role="navigation">
         <div class="container-fluid" id="navfluid">

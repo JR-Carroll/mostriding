@@ -1,5 +1,7 @@
 $(document).ready(function() {
-   $('.data-table').dataTable();
+   if(location.href.indexOf('application/') != -1){	
+	   $('.data-table').dataTable();
+   }
    $('.btn-delete').on('click', function(){
 	   if(confirm("Are you sure want to delete this course?")){
 		   $.post($('#subContext').val()+ '/schedules/delete', 'course_schedule_id='+$(this).data('course_schedule-id'), function(data){

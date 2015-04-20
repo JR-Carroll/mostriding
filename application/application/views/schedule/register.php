@@ -223,7 +223,7 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 						value="<?php if (isset($input['cvc'])) echo $input['cvc'];?>" />
 				</div>
 			</div>
-			
+			<?php if($isGC == 1){?>
 			<center><h2>Optional/Additional Information</h2></center>
 			<div class="form-group">
 				<label for="student_name" class="col-lg-3 control-label">Student Name</label>
@@ -329,7 +329,7 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 						value="<?php if (isset($input['student_phone'])) echo $input['student_phone'];?>" />
 				</div>
 			</div>
-
+            <?php }?>
 
 			<div class="form-group">
 				<label class="col-lg-6 control-label submitForm">
