@@ -177,9 +177,17 @@ class Schedule extends CI_Model {
     public function getRosters($courseScheduleId) {
         try{
             $this->db->order_by("updated_at", "desc");
+            /*
             $query = $this->db->get('course_schedule_participant');
             $participants = $query->result_array();
-    
+    		*/
+            
+            $query = $this->db
+            ->select()
+            ->where(array('course_schedule_id'=>$courseScheduleId))
+            ->get('course_schedule_participant');
+            $participants = $query->result_array();
+            
             if (count($participants) > 0)
                 return $participants;
             else
