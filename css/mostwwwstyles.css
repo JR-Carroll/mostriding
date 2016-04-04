@@ -700,7 +700,7 @@ a:link a:visited a:hover a:active {
 .map {
     padding-right: 2em;
     color: #fff;
-    background-image: url('../imgs/greyscaleGoogleMap.jpg');
+    background-image: url('../imgs/googleMap.png');
     background-size: cover;
     background-position: top center;
     min-height: 30em;
