@@ -296,8 +296,7 @@ html, body {
     color: #fff;
 }*/
 .carousel-overlay, .jumboTitle {
-    color: white !important;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+    color: #000 !important;
 }
 
 .carousel-overlay h1 {
@@ -406,11 +405,16 @@ html, body {
 }
 
 .lead {
-    color: #DB841F;
+    color: #000;
     font-weight: 800 !important;
-    text-shadow: 1px 1px 1px #000;
+    
 }
 
+.lead2 {
+    color: #F2E8E8;
+    font-weight: 800 !important;
+    
+}
 
 .cast {
     font-size: 1.0em;
@@ -442,7 +446,7 @@ html, body {
 }
 
 .phone>a {
-    color: #DB841F;
+    color: #000;
     font-weight: bolder;
     text-decoration: none;
 }
@@ -630,62 +634,62 @@ a:link a:visited a:hover a:active {
     background: url(../imgs/guy_on_motorcycle.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .standard-jumbotron {
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .aboutpage {
     background: url(../imgs/2215746619_2ee4fe635f_o.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .giftcerts-page {
     background: url(../imgs/16273464919_eb98722dfa_k.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .trainingpage {
     background: url(../imgs/12458369475_13eda62d51_o.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .schedulepage {
     background: url(../imgs/2216540928_9e6b81b8ae_o.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .contactpage {
     background: url(../imgs/14172076541_e142d24677_k.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .faqpage {
     background: url(../imgs/2216540202_9c0d882050_o.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .linkspage {
     background: url(../imgs/14082449743_ea19cd6430_k.jpg) no-repeat center;
     background-size: cover;
     opacity: 0.75;
-    height: 100%;
+    height: 80%;
 }
 
 .top-header {
@@ -780,6 +784,10 @@ a:link a:visited a:hover a:active {
     margin-top: 30px;
     width: 200px;
     height: 200px;
+}
+
+.well {
+    background-color: #D8CFA8;
 }
 
 /*@media screen and (max-width: 560px) {
