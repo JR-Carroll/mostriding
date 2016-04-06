@@ -695,6 +695,7 @@ a:link a:visited a:hover a:active {
 
 .middlemap {
     height: 30em;
+    margin-top: 1em;
 }
 
 .map {
