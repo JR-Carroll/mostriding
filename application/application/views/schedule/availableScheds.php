@@ -5,7 +5,7 @@
 <?php 
 foreach(getCourseCodes() as $courseInfo){
 ?>
-<h3 class="lead"><?php echo $courseInfo['code'].' - '.$courseInfo['name']?></h3>
+<h3 class="lead purple"><?php echo $courseInfo['code'].' - '.$courseInfo['name']?></h3>
 <?php if(count($course_schedules[$courseInfo['code']]) == 0){?>
 <p style="color: #fff">No Available Schedule</p>
 <?php }else{?>
