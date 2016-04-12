@@ -26,7 +26,7 @@ class Schedule extends CI_Model {
             //var_dump($filterParams);
             $query = $this->db->where($filterParams)->get('course_schedule');
             //var_dump($query);
-           // die;
+            //die;
             $schedules = $query->result_array();
             
             if (count($schedules) > 0)

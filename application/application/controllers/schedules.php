@@ -32,7 +32,12 @@ class Schedules extends CI_Controller {
     public function filter() {
         if (isAuthenticated()) {
             $filterParams = $_REQUEST;
-            $data['course_schedules'] = $this->schedule->getSchedules($filterParams);
+            $newFilterParams = [];
+            $keys = ['course_code', 'location_code', 'start_date'];
+            foreach($keys as $key){
+                $newFilterParams[$key] = $filterParams[$key];
+            }
+            $data['course_schedules'] = $this->schedule->getSchedules($newFilterParams);
     
             $this->load->view('schedule/_lists', $data);    
         }
