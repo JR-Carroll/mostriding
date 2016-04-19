@@ -21,8 +21,12 @@ class Schedule extends CI_Model {
             if(isset($filterParams['start_date']) && $filterParams['start_date'] == ''){
                 unset($filterParams['start_date']);
             }
+            if(isset($filterParams['schedules/filter']))
+                unset($filterParams['schedules/filter']);
             //var_dump($filterParams);
             $query = $this->db->where($filterParams)->get('course_schedule');
+            //var_dump($query);
+            //die;
             $schedules = $query->result_array();
             
             if (count($schedules) > 0)
@@ -46,6 +50,9 @@ class Schedule extends CI_Model {
             if(isset($filterParams['start_date']) && $filterParams['start_date'] == ''){
                 unset($filterParams['start_date']);
             }
+            if(isset($filterParams['schedules/filter']))
+                unset($filterParams['schedules/filter']);
+            
             //var_dump($filterParams);
             $query = $this->db->where($filterParams)->get('course_schedule');
             $schedules = $query->result_array();
