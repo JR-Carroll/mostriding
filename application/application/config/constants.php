@@ -64,9 +64,13 @@ define('LOCATIONS', json_encode(
 /*
  PROD
   SecurenetId: 1076290  
- SecureKey: WQ6HzSPS4GMl
+  SecureKey: WQ6HzSPS4GMl
+ 
+ TEST
+  SecurenetId: 8003668  
+  SecureKey: 5p0CEH5jUxpL  
  */
-define('SECURENET_ID', '8003668');
-define('SECURENET_KEY', '5p0CEH5jUxpL');
+define('SECURENET_ID', '1076290');
+define('SECURENET_KEY', 'WQ6HzSPS4GMl');
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
