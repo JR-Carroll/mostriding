@@ -178,51 +178,6 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 				
 			</div>
 			
-			<div class="form-group">
-				<label for="cardNumber" class="col-lg-3 control-label">Card # *</label>
-				<div class="col-lg-6">
-					<input type="text" class="form-control" id="cardNumber"
-						name="cardNumber"
-						value="<?php if (isset($input['cardNumber'])) echo $input['cardNumber'];?>" />
-				</div>
-			</div>
-			<div class="form-group" style="margin-bottom: 0px">
-				<label for="expDate" class="col-lg-3 control-label">Exp Date *</label>
-				<div class="col-lg-2 form-group" style="margin-left:1px">
-						<select id="exp_month" name='exp_month' class="form-control">
-							<option value="01">01 - January</option>
-							<option value="02">02 - February</option>
-							<option value="03">03 - March</option>
-							<option value="04">04 - April</option>
-							<option value="05">05 - May</option>
-							<option value="06">06 - June</option>
-							<option value="07">07 - July</option>
-							<option value="08">08 - August</option>
-							<option value="09">09 - September</option>
-							<option value="10">10 - October</option>
-							<option value="11">11 - November</option>
-							<option value="12">12 - December</option>
-						</select>
-					</div>
-					<div class="col-lg-2  form-group">
-						<select id="exp_year" name="exp_year" class="form-control">
-							<?php for($i = Date('Y'); $i<Date('Y') + 10; $i++){?>
-								<option value="<?php echo substr($i, -2);?>"><?php echo $i?></option>
-							<?php }?>
-						</select>
-					</div>
-					<div class="col-md-3 form-group">
-						
-					</div>
-			</div>
-			<div class="form-group">
-				<label for="cvc" class="col-lg-3 control-label">CVC*</label>
-				<div class="col-lg-2">
-					<input type="text" class="form-control" id="cvc"
-						name="cvc"
-						value="<?php if (isset($input['cvc'])) echo $input['cvc'];?>" />
-				</div>
-			</div>
 			<?php if($isGC == 1){?>
 			<center><h2>Optional/Additional Information</h2></center>
 			<div class="form-group">

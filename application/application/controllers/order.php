@@ -22,6 +22,12 @@ class Order extends CI_Controller
             $this->login();
         }
     }
+    
+    public function test(){
+        $data = [];
+        $data['content'] = $this->load->view('schedule/test', $data, true);
+        $this->load->view('layouts/main', $data);
+    }
 
     public function confirmation()
     {
@@ -31,11 +37,13 @@ class Order extends CI_Controller
         //we insert the record in the db already
     }
     public function thankyou($confirmationNumber){
+        //var_dump($_REQUEST);
+        //var_dump($_POST);
     	$data['confirmationNumber'] = $confirmationNumber;
     	$data['content'] = $this->load->view('schedule/thankyou', $data, true);
     	$this->load->view('layouts/main', $data);
     }
-    public function payment()
+    public function paymentOld()
     {
     	if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             redirect('/schedule.html');
@@ -96,6 +104,10 @@ class Order extends CI_Controller
                 unset($participant['cvc']);
                 unset($participant['cardNumber']);
                 
+                $dataInfo = [];
+                $dataInfo['participant'] = $participant;
+                $dataInfo['isGC'] = $isGC;
+                
                 //var_dump($res);
                 $responseModel = $this->ProcessCardTransaction($input, number_format(getCoursePrice($courseCode)));
                 //var_dump($responseModel->response->TRANSACTIONRESPONSE->RESPONSE_CODE);
@@ -134,6 +146,169 @@ class Order extends CI_Controller
     		}
         
     }
+    
+    public function payment()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $protocol = '';
+            if(isset($_SERVER['HTTPS'])){
+                $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+            }
+            else{
+                $protocol = 'http';
+            }
+            redirect($protocol.'://'.$_SERVER['SERVER_NAME'].'/schedule.html');
+        }
+    
+        $input = $this->input->post();
+        $isGC = $input['isGC'];
+    
+        $this->form_validation->set_rules('first_name', 'First Name', 'trim|required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required');
+        //$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|required');
+        $this->form_validation->set_rules('street_address', 'Address', 'trim|required');
+        $this->form_validation->set_rules('city', 'City', 'trim|required');
+        $this->form_validation->set_rules('state', 'State', 'trim|required');
+        $this->form_validation->set_rules('zip', 'Zip', 'trim|required');
+//         $this->form_validation->set_rules('cardNumber', 'Card Number', 'trim|required');
+//         $this->form_validation->set_rules('exp_month', 'Card Expiry Month', 'trim|required');
+//         $this->form_validation->set_rules('exp_year', 'Card Expiry Year', 'trim|required');
+//         $this->form_validation->set_rules('cvc', 'CVC', 'trim|required');
+        $isSuccess = false;
+        $confirmationNumber = '';
+        $courseCode = '';
+        if($isGC == 0){
+            $courseScheduleId = $input['course_schedule_id'];
+            $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);
+            $courseCode = $data['courseSchedule']['course_code'];
+             
+            $data['isGC'] = false;
+            $data['courseCode'] = '';
+             
+        }else{
+            $courseCode = $input['course_code'];
+            $data['courseSchedule'] = false;
+            $data['isGC'] = true;
+            $data['courseCode'] = $courseCode;
+        }
+         
+         
+        //template has errors
+        if ($this->form_validation->run() == FALSE) {
+            $data['error'] = validation_errors();
+            $data['input'] = $input;
+        }else {
+            //template is for saving
+            //$data['success'] = 'Course Schedule Participant Added Successfully';
+    
+             
+            $participant = array();
+            $participant = $input;
+    
+    
+            $confirmationNumber='';
+    
+            unset($participant['save']);
+            unset($participant['exp_month']);
+            unset($participant['exp_year']);
+            unset($participant['cvc']);
+            unset($participant['cardNumber']);
+    
+           
+                //$participant['transaction_status'] = $confirmationNumber;//confirmation code;;
+                unset($participant['isGC']);
+            
+                if($isGC == 0){
+                    unset($participant['course_code']);
+                    $participant['course_schedule_id'] = $courseScheduleId;
+                    //$res = $this->schedule->addCourseParticipant($participant);
+                }else{
+                    unset($participant['course_schedule_id']);
+                    //$res = $this->schedule->addCourseGiftCertificatePurchases($participant);
+                }
+                //print_r('success');
+            
+            $dataInfo = [];
+            $dataInfo['participant'] = $participant;
+            $dataInfo['courseCode'] = $courseCode;
+            $dataInfo['isGC'] = $isGC;
+            $dataInfo['amount'] = number_format(getCoursePrice($courseCode));
+    
+            $data['content'] = $this->load->view('schedule/processor', ['info' => $dataInfo], true);
+            $this->load->view('layouts/main', $data);
+        }
+        /*
+        if($isSuccess == true){
+            redirect('/order/thankyou/'.$confirmationNumber);
+        }else{
+             
+            $data['content'] = $this->load->view('schedule/register', $data, true);
+            $this->load->view('layouts/main', $data);
+        }
+        */
+    }
+    
+    public function paymentconfirm(){
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $protocol = '';
+            if(isset($_SERVER['HTTPS'])){
+                $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+            }
+            else{
+                $protocol = 'http';
+            }
+            redirect($protocol.'://'.$_SERVER['SERVER_NAME'].'/schedule.html');
+        }
+        
+        if(count($_POST) != 0){
+            $paymentSuccess = false;
+            $postParams = json_decode($_POST['x_params'], true);
+            $participant = $postParams['participant'];
+            $courseCode = $postParams['courseCode'];
+            $isGC = $postParams['isGC'];
+            if(isset($_POST['x_response_code']) && isset($_POST['x_response_reason_code']) && $_POST['x_response_code'] == '1' && $_POST['x_response_reason_code'] == '1'){
+                $paymentSuccess = true;
+                
+                $confirmationNumber = $_POST['x_trans_id'];
+                
+                
+                $participant['transaction_status'] = $confirmationNumber;//confirmation code;;
+                
+                if($isGC == 0){
+                    //unset($participant['course_code']);
+                    //$participant['course_schedule_id'] = $courseScheduleId;
+                    $res = $this->schedule->addCourseParticipant($participant);
+                }else{
+                    //unset($participant['course_schedule_id']);
+                    $res = $this->schedule->addCourseGiftCertificatePurchases($participant);
+                }
+                
+                $protocol = '';
+                if(isset($_SERVER['HTTPS'])){
+                    $protocol = ($_SERVER['HTTPS'] && $_SERVER['HTTPS'] != "off") ? "https" : "http";
+                }
+                else{
+                    $protocol = 'http';
+                }
+                $redirectUrl = ($protocol.'://'.$_SERVER['SERVER_NAME'].'/application/order/thankyou/'.$confirmationNumber);                
+                $data['content'] = $this->load->view('schedule/redirect', ['redirectUrl' => $redirectUrl], true);
+                $this->load->view('layouts/main', $data);
+            }else{
+                $additionalMsg = '';
+                if(isset($_POST['x_response_reason_text'])){
+                    $additionalMsg = $_POST['x_response_reason_text'];
+                }
+                
+                $data['error'] = "Payment Failed: ".$additionalMsg;
+                $data['content'] = $this->load->view('schedule/error', $data, true);
+                $this->load->view('layouts/main', $data);
+            }
+        
+        
+        }
+        //var_dump($_POST);
+    }
     private function updateFromUIForCardTransaction($uiData)
     {
     	
@@ -156,8 +331,12 @@ class Order extends CI_Controller
     
     private function initializeTransaction($input)
     {
+        
     	$transaction = new ArrayObj();
     	$transaction->MERCHANT_KEY = $this->getMerchantKey();
+    	
+    	
+    	
     	$transaction->DEVELOPERID = "12345"; // your developer id
     	$transaction->VERSION = "v1.0"; // your app version
     
