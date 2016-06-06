@@ -62,23 +62,14 @@ define('LOCATIONS', json_encode(
     )
 ));
 /*
- PROD
-  SecurenetId: 1076290  
-  SecureKey: WQ6HzSPS4GMl
- 
- TEST
-  SecurenetId: 8003668  
-  SecureKey: 5p0CEH5jUxpL  
- */
-/*
-define('SECURENET_ID', '1076290');
-define('SECURENET_KEY', 'WQ6HzSPS4GMl');
-*/
-define('SECURENET_ID', '8003668');
-define('SECURENET_KEY', '5p0CEH5jUxpL');
-
 define('AUTHORIZE_NET_ID', '96tk7ZP2WY');
 define('AUTHORIZE_NET_KEY', '47rK9rY22G9Mu2Ev');
 define('AUTHORIZE_NET_URL', 'https://test.authorize.net/gateway/transact.dll');
+*/
+
+define('AUTHORIZE_NET_ID', '4D7Hk5YEwx');
+define('AUTHORIZE_NET_KEY', '2c9KzQuU56j3t2Dt');
+define('AUTHORIZE_NET_URL', 'https://secure.authorize.net/gateway/transact.dll');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
