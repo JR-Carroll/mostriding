@@ -178,11 +178,12 @@ class Order extends CI_Controller
         $isSuccess = false;
         $confirmationNumber = '';
         $courseCode = '';
+        $courseSched = false;
         if($isGC == 0){
             $courseScheduleId = $input['course_schedule_id'];
             $data['courseSchedule'] = $this->schedule->getCourseSchedule($courseScheduleId);
             $courseCode = $data['courseSchedule']['course_code'];
-             
+            $courseSched = $data['courseSchedule'] ;
             $data['isGC'] = false;
             $data['courseCode'] = '';
              
@@ -194,14 +195,17 @@ class Order extends CI_Controller
         }
          
          
+        
         //template has errors
         if ($this->form_validation->run() == FALSE) {
             $data['error'] = validation_errors();
             $data['input'] = $input;
+            $data['content'] = $this->load->view('schedule/register', $data, true);
+            $this->load->view('layouts/main', $data);
         }else {
             //template is for saving
             //$data['success'] = 'Course Schedule Participant Added Successfully';
-    
+            
              
             $participant = array();
             $participant = $input;
@@ -218,12 +222,12 @@ class Order extends CI_Controller
            
                 //$participant['transaction_status'] = $confirmationNumber;//confirmation code;;
                 unset($participant['isGC']);
-            
                 if($isGC == 0){
                     unset($participant['course_code']);
                     $participant['course_schedule_id'] = $courseScheduleId;
                     //$res = $this->schedule->addCourseParticipant($participant);
                 }else{
+                    $courseSchedId = $participant['course_schedule_id'];
                     unset($participant['course_schedule_id']);
                     //$res = $this->schedule->addCourseGiftCertificatePurchases($participant);
                 }
@@ -235,7 +239,7 @@ class Order extends CI_Controller
             $dataInfo['isGC'] = $isGC;
             $dataInfo['amount'] = number_format(getCoursePrice($courseCode));
     
-            $data['content'] = $this->load->view('schedule/processor', ['info' => $dataInfo], true);
+            $data['content'] = $this->load->view('schedule/processor', ['info' => $dataInfo, 'courseSched' => $courseSched], true);
             $this->load->view('layouts/main', $data);
         }
         /*

@@ -50,7 +50,7 @@ Course Price: <?php echo number_format(getCoursePrice($courseSchedule['course_co
 			</div>
 			<?php }?>
 			
-			<h2><center>Billing Information</center></h2>
+			<h2><center>Student Information</center></h2>
 			<div class="form-group">
 				<label for="first_name" class="col-lg-3 control-label">First Name *</label>
 				<div class="col-lg-6">

@@ -39,7 +39,22 @@ $fingerprint = getFingerprint($api_login_id, $transaction_key,
 $amount, $fp_sequence, $fp_timestamp);
 $courseInfo = getCourseName($info['courseCode']);
 $participant = $info['participant'];
-$description = 'Purchase of '.$info['courseCode'].' - '.$participant['first_name'].' '.$participant['last_name'];
+$courseInfo = '';
+$description = '';
+
+if($courseSched !== false){
+//     var_dump($courseSched['name']);
+//     var_dump($courseSched['location_code']. ' - '.getLocationInfo($courseSched['location_code']));
+//     var_dump(date('M d, Y', strtotime($courseSched['end_date'])) . ' to ' .date('M d, Y',strtotime($courseSched['end_date'])));
+    
+            
+    $description = 'Purchase of '.$info['courseCode'].' in '.getLocationInfo($courseSched['location_code']).' for '.date('M d, Y', strtotime($courseSched['end_date'])) . ' to ' .date('M d, Y',strtotime($courseSched['end_date'])).'  - '.$participant['first_name'].' '.$participant['last_name'];
+}else{
+    $courseInfo = 'Gift Certificate';
+    $description = '('.$courseInfo.') Purchase of '.$info['courseCode'].' - '.$participant['first_name'].' '.$participant['last_name'];
+}
+
+
 ?>
 <form id="payment-form" method='post' action="<?php echo $authorizeUrl?>">
   <input type='hidden' name="x_login" value="<?php echo $api_login_id?>" />
